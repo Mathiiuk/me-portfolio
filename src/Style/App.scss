@@ -15,7 +15,7 @@ $color4: #222831;
     grid-template-rows: repeat(4, 1fr);
     height: 100vh;
     gap: 5px;
-    background: linear-gradient(to bottom, $color4, $color1); 
+    background: linear-gradient(to bottom, $color4, $color1);
 
     .div1 {
         grid-area: 1 / 1 / 3 / 3;
@@ -27,8 +27,8 @@ $color4: #222831;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(to bottom, $color4, $color1); 
-            border-radius: 20px  20px 0 ; 
+            background: linear-gradient(to bottom, $color4, $color1);
+            border-radius: 20px 20px 0;
 
             img {
                 max-width: 90%;
@@ -46,11 +46,11 @@ $color4: #222831;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(to bottom, $color4, $color1); 
+            background: linear-gradient(to bottom, $color4, $color1);
 
             p {
                 font-size: 25px;
-                color: #fff; 
+                color: #fff;
                 text-align: center;
                 text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
                 padding: 20px;
@@ -60,51 +60,119 @@ $color4: #222831;
 
     .div2 {
         grid-area: 1 / 3 / 3 / 4;
-        background: linear-gradient(to bottom, $color4, $color1); 
+        background: linear-gradient(to bottom, $color4, $color1);
         border-radius: 0 0 20px 20px;
     }
 
     .div3 {
-        grid-area: 1 / 4 / 2 / 5;
-        background-color: $color3;
+        grid-area: 4 / 4 / 5 / 5;
+        background: linear-gradient(to bottom, $color1, $color4);
+        border-radius: 20px 0 0 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        gap: 5px;
+
+        .div3-1,
+        .div3-2,
+        .div3-3 {
+            border: 1px solid rgba(255, 255, 255, .25);
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.45);
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 20px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .div3-1::before,
+        .div3-2::before,
+        .div3-3::before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 0 0 5px 5px;
+            padding: 5px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .div3-1:hover::before,
+        .div3-2:hover::before,
+        .div3-3:hover::before {
+            transform: translateY(0);
+        }
+
+        .div3-1:hover,
+        .div3-2:hover,
+        .div3-3:hover {
+            transform: translateY(-20px);
+        }
     }
 
     .div4 {
-        grid-area: 1 / 4 / 5 / 5;
+        grid-area: 1 / 4 / 4 / 5;
         display: flex;
-        background: linear-gradient(to top, $color4, $color1 ); 
+        background: linear-gradient(to top, $color1, $color4 );
+        border-radius: 0 0 0 20px;
     }
 
     .div7 {
         grid-area: 3 / 2 / 5 / 4;
-        background: linear-gradient(to bottom, $color1, $color4); 
+        background: linear-gradient(to bottom, $color1, $color4);
         border-radius: 20px 20px 0 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        gap: 5px;
+
+        .div7-1,
+        .div7-2,
+        .div7-3,
+        .div7-4 {
+            padding: 20px;
+            padding: 35px;
+
+            border: 1px solid rgba(255, 255, 255, .25);
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.45);
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(15px);
+        }
     }
 
     .div8 {
         grid-area: 3 / 1 / 5 / 2;
-        background: linear-gradient(to bottom, $color1, $color4); 
+        background: linear-gradient(to bottom, $color1, $color4);
         border-radius: 25px 25px 0 0;
-
-        h3 {
-            font-size: 24px;
-            color: #fff;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+        display: flex;
+        flex-direction: column;
 
         .image-row {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Crea 4 columnas */
             justify-content: center;
             gap: 10px;
             margin-top: 2%;
+        }
 
-            img {
-                max-width: 20%;
-                max-height: 20%;
-            }
+        .image-row img {
+            align-items: center;
+            align-content: center;
+            max-width: 85%;
+            max-height: 85%;
         }
     }
+
 
     .div2,
     .div3,
@@ -120,28 +188,79 @@ $color4: #222831;
 
 
 
-@media (max-width: 768px) {
-    .container-main {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(auto, 1fr);
-    }
+@media (max-width: 800px) {
+    .container-main{
+        display: flex;
+        flex-direction: column;
+        border-radius: none;
+        gap: 5px;
 
-    .div1 {
-        grid-area: auto;
-
-        img {
-            width: 170px;
-            height: 170px;
+        .div1,
+        .div2,
+        .div3,
+        .div4,
+        .div5,
+        .div8 {
+            border-radius: 0;
         }
-    }
 
-    .div2,
-    .div3,
-    .div4,
-    .div5,
-    .div6,
-    .div7,
-    .div8 {
-        grid-area: auto;
+        .div3 {
+            background: linear-gradient(to bottom, $color1, $color4);
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+
+            .div3-1,
+            .div3-2,
+            .div3-3 {
+                border: 1px solid rgba(255, 255, 255, .25);
+                background-color: rgba(255, 255, 255, 0.45);
+                box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+                backdrop-filter: blur(15px);
+                position: relative;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+                overflow: hidden;
+                width: 7vh;
+            }
+
+            .div3-1::before,
+            .div3-2::before,
+            .div3-3::before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 50%;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+                border-radius: 0 0 5px 5px;
+                padding: 5px;
+                transform: translateY(100%);
+                transition: transform 0.3s;
+            }
+
+        }
+
+        .div8 {
+            background: linear-gradient(to bottom, $color1, $color4);
+            display: flex;
+            flex-direction: column;
+
+            .image-row {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                justify-content: center;
+                align-items: center;
+                justify-items: center;
+                gap: 10px;
+            }
+
+            .image-row img {
+                max-width: 70%;
+                max-height: 70%;
+            }
+        }
     }
 }
