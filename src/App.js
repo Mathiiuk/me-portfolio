@@ -36,7 +36,8 @@ function App() {
         </div>
 
         <div class="div2">
-          2
+          <div className='div2-1'>1</div>
+          <div className='div2-2'>2</div>
         </div>
 
         <div class="div3">
@@ -46,7 +47,10 @@ function App() {
         </div>
 
         <div class="div4">
-          4
+          <div className='div4-1'>1</div>
+          <div className='div4-2'>2</div>
+          <div className='div4-3'>3</div>
+          <div className='div4-4'>4</div>
         </div>
 
         <div class="div7">

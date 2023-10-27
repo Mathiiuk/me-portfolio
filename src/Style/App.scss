@@ -62,6 +62,22 @@ $color4: #222831;
         grid-area: 1 / 3 / 3 / 4;
         background: linear-gradient(to bottom, $color4, $color1);
         border-radius: 0 0 20px 20px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-content: center;
+        gap: 5px;
+
+        .div2-1,
+        .div2-2 {
+            padding: 20px;
+            padding: 35px;
+
+            border: 1px solid rgba(255, 255, 255, .25);
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.45);
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+        }
     }
 
     .div3 {
@@ -80,7 +96,6 @@ $color4: #222831;
             border-radius: 20px;
             background-color: rgba(255, 255, 255, 0.45);
             box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-            backdrop-filter: blur(15px);
             border-radius: 20px;
             padding: 20px;
             position: relative;
@@ -123,6 +138,23 @@ $color4: #222831;
         display: flex;
         background: linear-gradient(to top, $color1, $color4 );
         border-radius: 0 0 0 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        gap: 5px;
+
+        .div4-1,
+        .div4-2,
+        .div4-3,
+        .div4-4 {
+            padding: 20px;
+            padding: 35px;
+
+            border: 1px solid rgba(255, 255, 255, .25);
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.45);
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+        }
     }
 
     .div7 {
@@ -145,7 +177,6 @@ $color4: #222831;
             border-radius: 20px;
             background-color: rgba(255, 255, 255, 0.45);
             box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-            backdrop-filter: blur(15px);
         }
     }
 
@@ -154,25 +185,22 @@ $color4: #222831;
         background: linear-gradient(to bottom, $color1, $color4);
         border-radius: 25px 25px 0 0;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
 
         .image-row {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            /* Crea 4 columnas */
+            gap: 25px;
             justify-content: center;
-            gap: 10px;
-            margin-top: 2%;
+            
+            img {
+                max-width: 70%;
+            }
         }
 
-        .image-row img {
-            align-items: center;
-            align-content: center;
-            max-width: 85%;
-            max-height: 85%;
-        }
     }
-
 
     .div2,
     .div3,
@@ -184,82 +212,72 @@ $color4: #222831;
         padding: 10px;
         //border: 1px solid beige;
     }
-}
 
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
 
+        .div1 {
+            grid-area: 1 / 1 / 2 / 2;
+            display: flex;
 
-@media (max-width: 800px) {
-    .container-main{
-        display: flex;
-        flex-direction: column;
-        border-radius: none;
-        gap: 5px;
+            .div5 {
+                grid-area: 1 / 1 / 3 / 2;
+
+            }
+
+            .div6 {
+                grid-area: 1 / 2 / 3 / 3;
+
+                p {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .div2 {
+            grid-area: 1 / 3 / 3 / 4;
+
+            @media screen and (max-width: 768px) {
+                grid-area: auto;
+            }
+        }
+
+        .div3 {
+            grid-area: 4 / 4 / 5 / 5;
+
+        }
+
+        .div4 {
+            grid-area: 1 / 4 / 4 / 5;
+
+        }
+
+        .div7 {
+            grid-area: 3 / 2 / 5 / 4;
+
+        }
+
+        .div8 {
+            grid-area: 3 / 1 / 5 / 2;
+
+        }
 
         .div1,
         .div2,
         .div3,
         .div4,
         .div5,
+        .div6,
+        .div7,
         .div8 {
+            padding: 10px;
             border-radius: 0;
-        }
 
-        .div3 {
-            background: linear-gradient(to bottom, $color1, $color4);
-            display: grid;
-            justify-content: center;
-            align-items: center;
-            justify-items: center;
-
-            .div3-1,
-            .div3-2,
-            .div3-3 {
-                border: 1px solid rgba(255, 255, 255, .25);
-                background-color: rgba(255, 255, 255, 0.45);
-                box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-                backdrop-filter: blur(15px);
-                position: relative;
-                cursor: pointer;
-                transition: transform 0.3s ease;
-                overflow: hidden;
-                width: 7vh;
-            }
-
-            .div3-1::before,
-            .div3-2::before,
-            .div3-3::before {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 50%;
-                text-align: center;
-                background-color: rgba(0, 0, 0, 0.8);
-                color: white;
-                border-radius: 0 0 5px 5px;
-                padding: 5px;
-                transform: translateY(100%);
-                transition: transform 0.3s;
-            }
-
-        }
-
-        .div8 {
-            background: linear-gradient(to bottom, $color1, $color4);
-            display: flex;
-            flex-direction: column;
-
-            .image-row {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                justify-content: center;
-                align-items: center;
-                justify-items: center;
-                gap: 10px;
-            }
-
-            .image-row img {
-                max-width: 70%;
-                max-height: 70%;
+            //border: 1px solid beige;
+            @media screen and (max-width: 768px) {
+                grid-area: auto;
             }
         }
     }
