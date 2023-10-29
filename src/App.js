@@ -1,3 +1,9 @@
+import React, { useState } from 'react';
+import Modal1 from './components/Modal1';
+import Modal2 from './components/Modal2';
+import Modal3 from './components/Modal3';
+import Modal4 from './components/Modal4';
+
 import './Style/App.scss';
 import './Style/img.scss';
 
@@ -15,6 +21,27 @@ import github from './img/github.svg';
 import linkedin from './img/linkedin.svg';
 
 function App() {
+  const [modalOpen1, setModalOpen1] = useState(false);
+  const [modalOpen2, setModalOpen2] = useState(false);
+  const [modalOpen3, setModalOpen3] = useState(false);
+  const [modalOpen4, setModalOpen4] = useState(false);
+
+  const closeModal1 = () => {
+    setModalOpen1(false);
+  };
+
+  const closeModal2 = () => {
+    setModalOpen2(false);
+  };
+
+  const closeModal3 = () => {
+    setModalOpen3(false);
+  };
+
+  const closeModal4 = () => {
+    setModalOpen4(false);
+  };
+
   return (
     <div className="App">
 
@@ -41,8 +68,12 @@ function App() {
         </div>
 
         <div class="div3">
-          <div className='div3-1'><img src={linkedin} alt="html" />LinkedIn</div>
-          <div className='div3-2'><img src={github} alt="html" />GitHub</div>
+          <a href="https://www.linkedin.com/in/krepchuk-matias/" className='div3-1'>
+            <img src={linkedin} alt="html logo" />
+          </a>
+          <a href="https://github.com/Mathiiuk" className='div3-1'>
+            <img src={github} alt="github logo" />
+          </a>
           <div className='div3-3'>algo</div>
         </div>
 
@@ -53,13 +84,25 @@ function App() {
           <div className='div4-4'>4</div>
         </div>
 
-        <div class="div7">
-          <div className='div7-1'>1</div>
-          <div className='div7-2'>2</div>
-          <div className='div7-3'>3</div>
-          <div className='div7-4'>4</div>
+        <div className="div7">
+          <div className="div7-1" onClick={() => setModalOpen1(true)}>
+            <h2>PORTFOLIO</h2>
+          </div>
+          <div className="div7-2" onClick={() => setModalOpen2(true)}>
+            2
+          </div>
+          <div className="div7-3" onClick={() => setModalOpen3(true)}>
+            3
+          </div>
+          <div className="div7-4" onClick={() => setModalOpen4(true)}>
+            4
+          </div>
         </div>
 
+        <Modal1 isOpen={modalOpen1} onClose={closeModal1} />
+        <Modal2 isOpen={modalOpen2} onClose={closeModal2} />
+        <Modal3 isOpen={modalOpen3} onClose={closeModal3} />
+        <Modal4 isOpen={modalOpen4} onClose={closeModal4} />
         <div class="div8">
           <div class="image-row">
             <img src={html} alt="html" />
