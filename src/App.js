@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import Modal1 from './components/Modal1';
-import Modal2 from './components/Modal2';
-import Modal3 from './components/Modal3';
-import Modal4 from './components/Modal4';
+import ExpandableCard from './components/Modal1';
 
 import './Style/App.scss';
 import './Style/img.scss';
@@ -21,27 +18,6 @@ import github from './img/github.svg';
 import linkedin from './img/linkedin.svg';
 
 function App() {
-  const [modalOpen1, setModalOpen1] = useState(false);
-  const [modalOpen2, setModalOpen2] = useState(false);
-  const [modalOpen3, setModalOpen3] = useState(false);
-  const [modalOpen4, setModalOpen4] = useState(false);
-
-  const closeModal1 = () => {
-    setModalOpen1(false);
-  };
-
-  const closeModal2 = () => {
-    setModalOpen2(false);
-  };
-
-  const closeModal3 = () => {
-    setModalOpen3(false);
-  };
-
-  const closeModal4 = () => {
-    setModalOpen4(false);
-  };
-
   return (
     <div className="App">
 
@@ -84,25 +60,28 @@ function App() {
           <div className='div4-4'>4</div>
         </div>
 
-        <div className="div7">
-          <div className="div7-1" onClick={() => setModalOpen1(true)}>
-            <h2>PORTFOLIO</h2>
-          </div>
-          <div className="div7-2" onClick={() => setModalOpen2(true)}>
-            2
-          </div>
-          <div className="div7-3" onClick={() => setModalOpen3(true)}>
-            3
-          </div>
-          <div className="div7-4" onClick={() => setModalOpen4(true)}>
-            4
-          </div>
+        <div className='div7'>
+
+          <ExpandableCard className="div7-1"
+            title="Proyecto 1"
+            content="Content for PORTFOLIO card."
+          />
+          <ExpandableCard className="div7-2"
+            title="Proyecto 2"
+            content="Content for Card 2.asdfsadfsadfasdsfas"
+          />
+          <ExpandableCard className="div7-3"
+            title="Proyecto 3"
+            content="Content for Card 3."
+          />
+          <ExpandableCard className="div7-4"
+            title="Proyecto 4"
+            content="Content for Card 4."
+          />
+
         </div>
 
-        <Modal1 isOpen={modalOpen1} onClose={closeModal1} />
-        <Modal2 isOpen={modalOpen2} onClose={closeModal2} />
-        <Modal3 isOpen={modalOpen3} onClose={closeModal3} />
-        <Modal4 isOpen={modalOpen4} onClose={closeModal4} />
+
         <div class="div8">
           <div class="image-row">
             <img src={html} alt="html" />
