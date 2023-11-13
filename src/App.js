@@ -17,6 +17,10 @@ import csharp from './img/csharp.png';
 import github from './img/github.svg';
 import linkedin from './img/linkedin.svg';
 
+import fondo1 from './img/1.jpg';
+import fondo2 from './img/2.png';
+import fondo3 from './img/3.jpg';
+import fondo4 from './img/4.png';
 function App() {
   return (
     <div className="App">
@@ -61,26 +65,31 @@ function App() {
         </div>
 
         <div className='div7'>
-
-          <ExpandableCard className="div7-1"
+          <ExpandableCard
+            className="div7-1"
             title="Proyecto 1"
             content="Content for PORTFOLIO card."
+            fondo={fondo1} // Reemplaza fondo1 con la URL de la imagen para div7-1
           />
-          <ExpandableCard className="div7-2"
+          <ExpandableCard
+            className="div7-2"
             title="Proyecto 2"
-            content="Content for Card 2.asdfsadfsadfasdsfas"
+            content="Content for Card 2."
+            fondo={fondo2} // Reemplaza fondo2 con la URL de la imagen para div7-2
           />
-          <ExpandableCard className="div7-3"
+          <ExpandableCard
+            className="div7-3"
             title="Proyecto 3"
             content="Content for Card 3."
+            fondo={fondo3} // Reemplaza fondo3 con la URL de la imagen para div7-3
           />
-          <ExpandableCard className="div7-4"
+          <ExpandableCard
+            className="div7-4"
             title="Proyecto 4"
             content="Content for Card 4."
+            fondo={fondo4} // Reemplaza fondo4 con la URL de la imagen para div7-4
           />
-
         </div>
-
 
         <div class="div8">
           <div class="image-row">

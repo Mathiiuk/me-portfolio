@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../Style/App.scss';
 
-function Modal1({ title, content }) {
+function Modal1({ title, content, fondo}) {
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {

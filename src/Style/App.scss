@@ -1,3 +1,15 @@
+@mixin background-styles {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+$imagen1: '../img/1.jpg';
+$imagen2: '../img/2.png';
+$imagen3: '../img/3.jpg';
+$imagen4: '../img/4.png';
+
+
 * {
     margin: 0;
     padding: 0;
@@ -178,6 +190,19 @@ $color4: #222831;
             
         .card-header {
             cursor: pointer;
+            font-size: large;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+            margin-bottom: 10px; 
+            transition: color 0.3s;
+            background-color: #00000081;
+            border-radius: 5%;
+          
+            &:hover {
+              color: #00acb5;
+            }
         }
           
         .modal {
@@ -202,6 +227,26 @@ $color4: #222831;
             width: 100vh;
             text-align: center;
           }
+
+          &:nth-child(1) {
+            background-image: url($imagen1);
+            @include background-styles; 
+          }
+      
+          &:nth-child(2) {
+            background-image: url($imagen2);
+            @include background-styles; 
+          }
+      
+          &:nth-child(3) {
+            background-image: url($imagen3);
+            @include background-styles; 
+          }
+      
+          &:nth-child(4) {
+            background-image: url($imagen4);
+            @include background-styles; 
+          }
           
         }
     }
@@ -210,23 +255,34 @@ $color4: #222831;
         grid-area: 3 / 1 / 5 / 2;
         background: linear-gradient(to bottom, $color1, $color4);
         border-radius: 25px 25px 0 0;
-        display: flex;
+        display: grid;
         justify-content: center;
-        align-items: center;
-
-
+        text-align: center;
+    
         .image-row {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
             justify-content: center;
-
+            align-items: center;
+            gap: 20px;
+    
             img {
-                max-width: 70%;
+                width: 80%;
+                height: auto;
+                border-radius: 15px;
+                transition: transform 0.3s ease-in-out;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+                &:hover {
+                    transform: scale(1.1);
+                }
             }
         }
-
     }
+    
+    
+    
+    
 
     .div2,
     .div3,
